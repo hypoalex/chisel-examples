@@ -3,24 +3,20 @@ Chisel Examples
 
 The shall be a collection of code examples for [Chisel](https://github.com/ucb-bar/chisel).
 
-The collection shall be in a decent state to serve Advanced Computer Architecture
-in the spring semester.
-
 Getting the Examples
 ====================
 
-    $ git clone https://github.com/schoeberl/chisel-examples.git
+    $ git clone https://github.com/hypoalex/chisel-examples.git
 
-The collection is organized as follows:
-
-**hello-world** is a fully self contained minimal project for a blinking LED in an FPGA.
-
-**examples** is a collection of small Chisel projects.
+This is a collection of small Chisel projects.
 
 
-Needed Tools
-============
+Building with Docker
+====================
 
-A recent version of Java
+These images are a bit large! I recommend Docker for Mac.
 
-The Scala build tool [sbt](http://www.scala-sbt.org/)
+    docker pull hypoalex/riscv-chisel
+    docker run -v $(pwd):/code -it hypoalex/riscv-chisel /bin/bash
+    cd /code/examples
+    make

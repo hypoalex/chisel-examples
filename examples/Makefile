@@ -4,22 +4,31 @@
 # sbt looks for default into a folder ./project and . for build.sdt and Build.scala
 # sbt creates per default a ./target folder
 
+# Make it work in Docker :)
+showSuccess := false
+
 SBT = sbt
 
+# Force silence!
+.SILENT:
 
 # Generate Verilog code
 
+all: alu knight uart
+
 alu:
-	$(SBT) "run-main simple.AluMain"
+	@$(SBT) --silent "run-main simple.AluMain"
 
 knight:
-	$(SBT) "run-main simple.KnightMain"
+	@$(SBT) --silent "run-main simple.KnightMain"
 
 uart:
-	$(SBT) "run-main uart.SenderMain"
+	@$(SBT) --silent "run-main uart.SenderMain"
 
 
 # Generate the C++ simulation and run the tests
+
+test: alu-test knight-test fifo-test
 
 alu-test:
 	$(SBT) "run-main simple.AluTester"
