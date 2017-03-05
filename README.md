@@ -1,7 +1,7 @@
 Chisel Examples
 ===============
 
-The shall be a collection of code examples for [Chisel](https://github.com/ucb-bar/chisel).
+This shall be a collection of code examples for [Chisel](https://github.com/ucb-bar/chisel).
 
 Getting the Examples
 ====================
